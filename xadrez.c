@@ -4,11 +4,15 @@
 // Este código inicial serve como base para o desenvolvimento do sistema de movimentação das peças de xadrez.
 // O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
 
-int main() {
+int main()
+{
 
+    // Variaveis das peçãs.
     int casas_rainha = 8;
     int casas_bispo = 5;
     int casas_torre = 5;
+    int casas_reto_cavalo = 2;
+    int casas_lado_cavalo = 1;
     int loop; // Criei a variavel loop para evitar criar mais de uma variavel com letras e fui subscrevendo de acordo com o que eu precisava
 
     printf(" ----Movimentação da rainha---- \n");
@@ -35,6 +39,18 @@ int main() {
         printf("A torre andou %i casas para FRENTE\n", loop);
         loop++;
     }
+
+    // usei o do-wile para conseguir usar o for antes de printar uma vez a casa a direita do cavalo.
+    printf(" ----Movimentação do CAVALO---- \n");
+    do
+    {
+        for (loop = 1; loop <= casas_reto_cavalo; loop++)
+        {
+            printf("O cavalo andou %d casas para CIMA\n", loop);
+        }
+        printf("O cavalo andou %d casa para DIREITA", casas_lado_cavalo);
+        casas_lado_cavalo++;
+    } while (casas_lado_cavalo == 1);
 
     return 0;
 }
